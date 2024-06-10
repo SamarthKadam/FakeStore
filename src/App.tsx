@@ -1,15 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from './pages/Home';
+import Product from './pages/Product';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home></Home>,
+  },
+  {
+    path:'/product',
+    element:<Product></Product>
+  }
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className="text-2xl">Hello  World</div>
-      </header>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
