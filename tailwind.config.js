@@ -6,6 +6,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       'roboto': ['Roboto', 'sans-serif'],
+      'poppins':['Poppins']
     }
   },
   plugins: [],

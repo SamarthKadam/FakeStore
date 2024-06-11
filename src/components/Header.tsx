@@ -1,16 +1,17 @@
 import React from 'react'
 import { CiSearch } from "react-icons/ci";
 import { RiShoppingBag3Line } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <div className='bg-[#F9F9F9] py-4  flex justify-between'>
+    <div className='bg-[#F9F9F9] py-4 px-2  flex justify-between'>
         <div className='flex gap-8 items-center font-roboto'>
-            <div className='text-lg font-bold  cursor-pointer'>FakeStore</div>
-            <div className=' text-[#7A7A7A] cursor-pointer'>All</div>
-            <div className=' text-[#7A7A7A] cursor-pointer'>Filter</div>
+            <Link to='/' className='text-lg font-bold font-poppins cursor-pointer'>FakeStore</Link>
+            <div className=' text-[#7A7A7A] font-poppins cursor-pointer'>All</div>
+            <div className=' text-[#7A7A7A] font-poppins cursor-pointer'>Filter</div>
         </div>
-        <div className='flex gap-6'>
+        <div className='flex gap-6 items-center'>
         <div className="flex items-center border border-gray-300 rounded overflow-hidden w-72">
             <input 
                 type="text" 
@@ -22,9 +23,9 @@ export default function Header() {
             </button>
         </div>
         <div className='flex'>
-        <button>
+        <Link to='/cart'>
         <RiShoppingBag3Line size={30}/>
-        </button>
+        </Link>
         </div>
         </div>
     </div>

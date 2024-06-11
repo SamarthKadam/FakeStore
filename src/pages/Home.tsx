@@ -2,20 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Card from '../components/Home/Card';
 import { ProductInterface } from '../interfaces';
+import Loading from './Loading';
 
-// Define the Product type
-// interface Product {
-//     id: number;
-//     title: string;
-//     price: number;
-//     description: string;
-//     category: string;
-//     image: string;
-//     rating: {
-//         rate: number;
-//         count: number;
-//     };
-// }
 
 export default function Home() {
     const [products, setProducts] = useState<ProductInterface[]>([]);
@@ -30,10 +18,11 @@ export default function Home() {
         fetchProducts();
     }, []);
 
+    if(products.length===0)
+        return <Loading></Loading>
+
     return (
-        <div className='px-20'>
-            <Header />
-            <div className='grid my-4 grid-cols-4 gap-8'>
+            <div className='grid  grid-cols-3 gap-10 py-12'>
                 {products.length > 0 && products.map((product) => (
                     <Card
                         key={product.id}
@@ -47,6 +36,5 @@ export default function Home() {
                     />
                 ))}
             </div>
-        </div>
     );
 }
