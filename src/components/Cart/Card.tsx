@@ -19,7 +19,7 @@ export default function Card() {
             </div>
             <div className='flex flex-col justify-between'>
               <div className='font-medium font-poppins'>$20.00</div>
-              <div className='text-[#737373] font-poppins text-sm'>Remove</div>
+              <div className='text-[#737373] cursor-pointer hover:text-[#525252] font-poppins text-sm'>Remove</div>
             </div>
         </div>
         <div className="border-t border-gray-300 mt-4"></div>

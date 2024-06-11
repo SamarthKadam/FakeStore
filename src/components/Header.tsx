@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <div className='bg-[#F9F9F9] py-4 px-2  flex justify-between'>
+    <div className='bg-[#F9F9F9] sticky top-0 z-10  py-4 px-2  flex justify-between'>
         <div className='flex gap-8 items-center font-roboto'>
             <Link to='/' className='text-lg font-bold font-poppins cursor-pointer'>FakeStore</Link>
             <div className=' text-[#7A7A7A] font-poppins cursor-pointer'>All</div>
