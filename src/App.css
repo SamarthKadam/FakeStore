@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.Toastify__toast--black {
+  background: black;
+  color: white;
+}
