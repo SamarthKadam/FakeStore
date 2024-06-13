@@ -6,6 +6,7 @@ import Loading from './Loading';
 import useStore from '../store/useStore';
 import { toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { setItemToLocalStorage } from '../utility';
 
 export default function Product() {
 
@@ -36,8 +37,7 @@ export default function Product() {
       const response = await fetch(`https://fakestoreapi.com/products/${params.id}`);
       const data = await response.json();
       setProduct(data);
-    }catch(err)
-    {
+    } catch (err) {
       toast.error('Something went wrong!', {
         position: "top-center",
         autoClose: 5000,
@@ -48,11 +48,12 @@ export default function Product() {
         progress: undefined,
         theme: "dark",
         transition: Bounce,
-        });
-    }finally{
+      });
+    } finally {
       setIsLoading(false)
     }
   }
+
 
   useEffect(() => {
     fetchProducts();

@@ -14,7 +14,7 @@ const removeHandler=()=>{
     <div className='flex flex-col justify-center mt-4'>
       <div className='flex justify-between '>
         <div className='flex gap-4'>
-          <div className=' border-[#D4D4D4] rounded border-[1px] px-4 py-4'>
+          <div className=' border-[#D4D4D4] w-48 h-32 flex justify-center items-center rounded border-[1px] px-4 py-4'>
             <img className='h-28' src={image} alt='Ecommerce'></img>
           </div>
 

@@ -12,9 +12,14 @@ export interface ProductInterface {
 }
 
 export interface State {
-  isLoading:boolean,
-  cart:ProductInterface[];
-  addItem:(value:any)=>void;
-  setIsLoading:(value:boolean)=>void;
-  remove:(id:number)=>void;
+  searchInput: string;
+  isAscendingPrice:boolean|undefined,
+  isLoading: boolean;
+  cart: ProductInterface[];
+  setSearchInput: (value: string) => void;
+  addItem: (value: any) => void;
+  setIsLoading: (value: boolean) => void;
+  remove: (id: number) => void;
+  initializeCart: (value: []) => void;
+  sort:(value:boolean)=>void;
 }

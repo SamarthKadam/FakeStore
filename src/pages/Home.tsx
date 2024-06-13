@@ -3,12 +3,12 @@ import Card from '../components/Home/Card';
 import { ProductInterface } from '../interfaces';
 import Loading from './Loading';
 import useStore from '../store/useStore';
-import {toast, Bounce } from 'react-toastify';
+import { toast, Bounce } from 'react-toastify';
 
 
 export default function Home() {
     const [products, setProducts] = useState<ProductInterface[]>([]);
-    const { isLoading, setIsLoading } = useStore();
+    const { isLoading, setIsLoading, searchInput, isAscendingPrice } = useStore();
 
     const fetchProducts = async () => {
         try {
@@ -16,8 +16,7 @@ export default function Home() {
             const response = await fetch('https://fakestoreapi.com/products');
             const data: ProductInterface[] = await response.json();
             setProducts(data);
-        }catch(err)
-        {
+        } catch (err) {
             toast.error('Something went wrong!', {
                 position: "top-center",
                 autoClose: 5000,
@@ -28,9 +27,9 @@ export default function Home() {
                 progress: undefined,
                 theme: "dark",
                 transition: Bounce,
-                });
+            });
 
-        }finally{
+        } finally {
             setIsLoading(false)
         }
     }
@@ -39,12 +38,23 @@ export default function Home() {
         fetchProducts();
     }, []);
 
+
     if (isLoading)
         return <Loading></Loading>
 
+    const filteredProducts = products.filter(product =>
+        product.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchInput.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchInput.toLowerCase())
+    );
+
+    const sortedProducts = isAscendingPrice !== undefined
+        ? filteredProducts.sort((a, b) => isAscendingPrice ? a.price - b.price : b.price - a.price)
+        : filteredProducts;
+
     return (
         <div className='grid  grid-cols-3 gap-10 py-12'>
-            {products.length > 0 && products.map((product) => (
+            {sortedProducts.length > 0 && sortedProducts.map((product) => (
                 <Card
                     key={product.id}
                     category={product.category}

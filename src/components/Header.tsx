@@ -3,24 +3,44 @@ import { CiSearch } from "react-icons/ci";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import useStore from '../store/useStore';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+
+const options = [
+  'low to high', 'high to low'
+];
+const defaultOption = options[0];
+
 
 export default function Header() {
 
 
-  const {cart}=useStore();
+  const {cart,setSearchInput,sort}=useStore();
+
+  const searchHandler=(e:any)=>{
+    setSearchInput(e.target.value)
+  }
+
+  const sortHandler=(option:any)=>{
+    console.log(option.value);
+    const ans=option.value===options[0]?true:false;
+    sort(ans);
+  }
 
   return (
     <div className='bg-[#F9F9F9] sticky top-0 z-10  py-4 px-2  flex justify-between'>
       <div className='flex gap-8 items-center font-roboto'>
-        <Link to='/' className='text-lg font-bold font-poppins cursor-pointer'>FakeStore</Link>
-        <div className=' text-[#7A7A7A] font-poppins cursor-pointer'>All</div>
-        <div className=' text-[#7A7A7A] font-poppins cursor-pointer'>Filter</div>
+        <div className='text-lg font-bold font-poppins'>FakeStore</div>
+        <Link to='/' className=' text-[#7A7A7A] font-poppins cursor-pointer'>All</Link>
+        {/* <div className=' text-[#7A7A7A] font-poppins cursor-pointer'>Sort to Price</div> */}
+        <Dropdown className='text-sm text-[#7A7A7A]' options={options} onChange={sortHandler} value={'Sort Price'} placeholder="Select an option" />
       </div>
       <div className='flex gap-6 items-center'>
         <div className="flex items-center border border-gray-300 rounded overflow-hidden w-72">
           <input
             type="text"
             placeholder="Search for products"
+            onChange={searchHandler}
             className="flex-grow p-2 border-none outline-none"
           />
           <button type="submit" className="p-2 bg-white">
