@@ -53,7 +53,7 @@ export default function Home() {
         : filteredProducts;
 
     return (
-        <div className='grid  grid-cols-3 gap-10 py-12'>
+        <div className='grid  grid-cols-3 max-[1250px]:grid-cols-2 max-[615px]:grid-cols-1 gap-10 py-12'>
             {sortedProducts.length > 0 && sortedProducts.map((product) => (
                 <Card
                     key={product.id}

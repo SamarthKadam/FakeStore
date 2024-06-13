@@ -29,14 +29,14 @@ export default function Header() {
 
   return (
     <div className='bg-[#F9F9F9] sticky top-0 z-10  py-4 px-2  flex justify-between'>
-      <div className='flex gap-8 items-center font-roboto'>
+      <div className='flex gap-8 max-[520px]:gap-4 items-center font-roboto'>
         <div className='text-lg font-bold font-poppins'>FakeStore</div>
         <Link to='/' className=' text-[#7A7A7A] font-poppins cursor-pointer'>All</Link>
         {/* <div className=' text-[#7A7A7A] font-poppins cursor-pointer'>Sort to Price</div> */}
-        <Dropdown className='text-sm text-[#7A7A7A]' options={options} onChange={sortHandler} value={'Sort Price'} placeholder="Select an option" />
+        <Dropdown className='text-sm max-[400px]:hidden text-[#7A7A7A]' options={options} onChange={sortHandler} value={'Sort Price'} placeholder="Select an option" />
       </div>
       <div className='flex gap-6 items-center'>
-        <div className="flex items-center border border-gray-300 rounded overflow-hidden w-72">
+        <div className="flex items-center border max-[780px]:hidden border-gray-300 rounded overflow-hidden w-72">
           <input
             type="text"
             placeholder="Search for products"

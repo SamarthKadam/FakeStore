@@ -63,10 +63,10 @@ export default function Product() {
     return <Loading></Loading>
 
   return (
-    <div className='grid my-5 grid-cols-[2fr,1fr]'>
-      <div className='flex justify-center items-center'><img className='h-[75vh]' src={product.image}></img></div>
+    <div className='grid my-5 grid-cols-[2fr,1fr] max-[900px]:grid-cols-[1fr,1fr] max-[750px]:grid-cols-1'>
+      <div className='flex justify-center items-center'><img className='h-[75vh] max-[1200px]:h-[60vh]' src={product.image}></img></div>
       <div className='flex flex-col p-4'>
-        <div className='font-poppins font-medium text-3xl my-2'>{product.title}</div>
+        <div className='font-poppins font-medium text-3xl max-[1110px]:text-2xl my-2'>{product.title}</div>
         <div className='font-poppins text-md my-2'>${product.price}</div>
         <div><button onClick={addToCartHandler} className='bg-[#171717] hover:bg-[#363636] transition px-6 my-4 py-3 text-white font-poppins rounded-md font-medium'>Add to cart</button></div>
         <div className='font-poppins text-sm'>{product.description}</div>
