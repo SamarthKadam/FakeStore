@@ -13,8 +13,7 @@ export default function Root() {
 
   useEffect(() => {
     const storedCart = getItemFromLocalStorage();
-    console.log(storedCart);
-    if (storedCart.length > 0) {
+    if (!storedCart&&storedCart.length > 0) {
       initializeCart(storedCart);
     }
   }, []);
