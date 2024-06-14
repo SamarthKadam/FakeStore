@@ -20,8 +20,8 @@ export default function Card({ category, description, id, image, price, rating, 
 
           <div className='flex flex-col box-border py-2 justify-between'>
             <div>
-              <div className='font-poppins max-[700px]:text-sm'>{title}</div>
-              <div className='text-[#737373] font-poppins text-sm'>{category[0].toUpperCase()}{category.slice(1)}</div>
+              <div className='font-poppins max-[700px]:text-sm max-[600px]:text-xs'>{title}</div>
+              <div className='text-[#737373] font-poppins  text-sm'>{category[0].toUpperCase()}{category.slice(1)}</div>
             </div>
             <div className='font-semibold font-poppins'>Qty: 1</div>
           </div>
