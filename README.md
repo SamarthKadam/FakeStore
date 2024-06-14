@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a React-based single-page application (SPA) designed to interact with the FakeStore API, displaying products with detailed information. Users can view individual products, add them to the shopping cart, and remove them from the cart. Simulating the features of E-commerce
+This project is a React-based single-page application (SPA) designed to interact with the FakeStore API, displaying products with detailed information. Users can view individual products, add them to the shopping cart, and remove them from the cart. Simulating the features of E-commerce. Here is the deployment link https://fake-store-neon.vercel.app/
 ## Local Setup
 
 To set up the project locally, follow these steps:
