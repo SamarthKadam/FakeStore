@@ -15,15 +15,14 @@ const defaultOption = options[0];
 export default function Header() {
 
 
-  const {cart,setSearchInput,sort}=useStore();
+  const { cart, setSearchInput, sort } = useStore();
 
-  const searchHandler=(e:any)=>{
+  const searchHandler = (e: any) => {
     setSearchInput(e.target.value)
   }
 
-  const sortHandler=(option:any)=>{
-    console.log(option.value);
-    const ans=option.value===options[0]?true:false;
+  const sortHandler = (option: any) => {
+    const ans = option.value === options[0] ? true : false;
     sort(ans);
   }
 
@@ -50,7 +49,7 @@ export default function Header() {
         <div className='flex'>
           <Link className='relative' to='/cart'>
             <RiShoppingBag3Line size={30} />
-            {cart.length>0&&<div className='bg-black rounded right-0 top-[75%] text-xs font-poppins w-4 text-center font-medium text-white absolute'>{cart.length}</div>}
+            {cart.length > 0 && <div className='bg-black rounded right-0 top-[75%] text-xs font-poppins w-4 text-center font-medium text-white absolute'>{cart.length}</div>}
           </Link>
         </div>
       </div>

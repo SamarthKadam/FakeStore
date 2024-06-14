@@ -2,13 +2,13 @@ import React from 'react'
 import { ProductInterface as StateProps } from '../../interfaces'
 import useStore from '../../store/useStore'
 
-export default function Card({ category, description, id, image, price, rating, title }:StateProps) {
+export default function Card({ category, description, id, image, price, rating, title }: StateProps) {
 
-const {remove}=useStore();
+  const { remove } = useStore();
 
-const removeHandler=()=>{
-  remove(id);
-}
+  const removeHandler = () => {
+    remove(id);
+  }
 
   return (
     <div className='flex flex-col justify-center mt-4'>
@@ -26,9 +26,9 @@ const removeHandler=()=>{
             <div className='font-semibold font-poppins'>Qty: 1</div>
           </div>
         </div>
-        <div className='flex flex-col justify-between'>
-          <div className='font-medium font-poppins'>${price}</div>
-          <div onClick={removeHandler} className='text-[#737373] cursor-pointer hover:text-[#525252] font-poppins text-sm'>Remove</div>
+        <div className='flex flex-col justify-between gap-1'>
+          <div className='font-medium max-[600px]:text-xs font-poppins'>${price}</div>
+          <div onClick={removeHandler} className='text-[#737373] max-[600px]:text-xs cursor-pointer hover:text-[#525252] font-poppins text-sm'>Remove</div>
         </div>
       </div>
       <div className="border-t border-gray-300 mt-4"></div>

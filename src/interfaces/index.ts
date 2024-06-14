@@ -13,7 +13,7 @@ export interface ProductInterface {
 
 export interface State {
   searchInput: string;
-  isAscendingPrice:boolean|undefined,
+  isAscendingPrice: boolean | undefined;
   isLoading: boolean;
   cart: ProductInterface[];
   setSearchInput: (value: string) => void;
@@ -21,5 +21,5 @@ export interface State {
   setIsLoading: (value: boolean) => void;
   remove: (id: number) => void;
   initializeCart: (value: []) => void;
-  sort:(value:boolean)=>void;
+  sort: (value: boolean) => void;
 }

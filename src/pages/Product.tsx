@@ -12,10 +12,28 @@ export default function Product() {
 
   const params = useParams();
   const [product, setProduct] = useState<ProductInterface>();
-  const { addItem, isLoading, setIsLoading } = useStore();
+  const { addItem, isLoading, setIsLoading, cart } = useStore();
 
 
   const addToCartHandler = () => {
+
+    if (product) {
+      let present = cart.find((val) => val.id === product.id);
+      if (present) {
+        return toast.success('Item Already in Cart!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
+      }
+
+    }
     addItem(product);
     toast.success('Added to Cart!', {
       position: "top-center",

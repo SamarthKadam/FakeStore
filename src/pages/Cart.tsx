@@ -34,7 +34,7 @@ export default function Cart() {
           <div className='flex font-poppins font-medium justify-center items-center'>${totalPrice.toFixed(2)}</div>
         </div>
         <div className='flex justify-center'>
-          <button className='bg-black hover:bg-[#1C1C1C] px-40 py-3 text-md font-poppins text-white rounded'>Checkout</button>
+          <button className='bg-black hover:bg-[#1C1C1C] px-40 py-3 max-[500px]:px-28 text-md font-poppins text-white rounded'>Checkout</button>
         </div>
       </>)}
     </div>
