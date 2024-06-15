@@ -13,8 +13,9 @@ export interface ProductInterface {
 
 export interface State {
   searchInput: string;
+  currentPage:number;
   isAscendingPrice: boolean | undefined;
-  category:string|undefined;
+  category: string | undefined;
   isLoading: boolean;
   cart: ProductInterface[];
   setSearchInput: (value: string) => void;
@@ -23,5 +24,6 @@ export interface State {
   remove: (id: number) => void;
   initializeCart: (value: []) => void;
   sort: (value: boolean) => void;
-  setCategory:(value:string)=>void;
+  setCategory: (value: string) => void;
+  setCurrentPage:(value:number)=>void;
 }

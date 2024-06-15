@@ -6,7 +6,9 @@ const useStore = create<State>((set) => ({
   isLoading: false,
   isAscendingPrice: undefined,
   cart: [],
-  category:undefined,
+  currentPage:1,
+  category: undefined,
+  setCurrentPage:(value:number)=>set((state)=>({currentPage:value})),
   setSearchInput: (value: string) => set((state) => ({ searchInput: value })),
   setIsLoading: (value: boolean) => set((state) => ({ isLoading: value })),
   addItem: (item: ProductInterface) =>
@@ -17,7 +19,7 @@ const useStore = create<State>((set) => ({
     })),
   initializeCart: (value: []) => set((state) => ({ cart: value })),
   sort: (value: boolean) => set((state) => ({ isAscendingPrice: value })),
-  setCategory:(value:string)=>set((state)=>({category:value}))
+  setCategory: (value: string) => set((state) => ({ category: value })),
 }));
 
 export default useStore;

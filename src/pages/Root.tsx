@@ -24,7 +24,7 @@ export default function Root() {
 
 
   return (
-    <div className='px-36 max-[970px]:px-12 max-[450px]:px-6'>
+    <div className='px-36 max-[970px]:px-12 max-[1100px]:px-20 max-[450px]:px-6'>
       <ToastContainer
         position="top-center"
         autoClose={5000}
