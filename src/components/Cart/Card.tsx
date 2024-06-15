@@ -26,7 +26,7 @@ export default function Card({ category, description, id, image, price, rating, 
             <div className='font-semibold font-poppins'>Qty: 1</div>
           </div>
         </div>
-        <div className='flex flex-col justify-between gap-1'>
+        <div className='flex flex-col items-center justify-between gap-1'>
           <div className='font-medium max-[600px]:text-xs font-poppins'>${price}</div>
           <div onClick={removeHandler} className='text-[#737373] max-[600px]:text-xs cursor-pointer hover:text-[#525252] font-poppins text-sm'>Remove</div>
         </div>
